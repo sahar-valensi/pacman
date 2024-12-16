@@ -98,7 +98,7 @@ function handleFood() {
 }
 function handlSuperFood(){
     gPacman.isSuper = true
-    rendrGhost()
+    renderGhost()
     setTimeout(() => {
         gPacman.isSuper = false
         reviveGhost()

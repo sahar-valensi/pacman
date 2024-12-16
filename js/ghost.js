@@ -6,6 +6,7 @@ var gDeadGhost = []
 var gGhostsInterval
 
 function createGhosts(board) {
+    gGhosts = []
     // TODO: Create 3 ghosts and an interval
     for (var i = 0; i < 3; i++) {
         createGhost(board)
@@ -83,10 +84,8 @@ function getMoveDiff() {
 
 function getGhostHTML(ghost) {
     const ghostColor = (gPacman.isSuper) ? 'blue' : ghost.color
-
     // if(gPacman.isSuper){
-    //     return `<span style ="background-color:blue;">${GHOST}</span>`
-    // }
+    //     return `<span style ="background-color:blue;">${GHOST}</span> }
     return `<span style= "background-color:${ghostColor}">${GHOST}</span>`
 }
 function renderGhost() {
@@ -105,7 +104,6 @@ function killGhost(location) {
         }
         // renderCell(currGhost.location,getGhostHTML(currLocation))
     }
-
 }
 function checkGhostCellContect(ghost) {
     if (ghost.currLocation === FOOD) {
@@ -114,7 +112,7 @@ function checkGhostCellContect(ghost) {
     }
 }
 function reviveGhost() {
-    for (var i = 0; i < gGhosts.length; i++){
+    for (var i = 0; i < gDeadGhost.length; i++){
         const currGhost = gDeadGhost[i]
         gGhosts.push(currGhost)
     }

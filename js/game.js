@@ -68,7 +68,7 @@ function gameOver() {
     clearInterval(gGhostsInterval)
 
     gGame.isOn = false
-    renderCell(gPacman.loction,EMPTY)
+    renderCell(gPacman.location,EMPTY)
     const msg = (gGame.isWon) ? 'You Won!' : ' Game Over'
     openModal(msg)
 }
