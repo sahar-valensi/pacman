@@ -1,14 +1,14 @@
 'use strict'
 
-function renderBoard(mat, selector) {
-
+function renderBoard() {
+    
     var strHTML = '<table><tbody>'
-    for (var i = 0; i < mat.length; i++) {
+    for (var i = 0; i < gBoard.length; i++) {
 
         strHTML += '<tr>'
-        for (var j = 0; j < mat[0].length; j++) {
+        for (var j = 0; j < gBoard[0].length; j++) {
 
-            const cell = mat[i][j]
+            const cell = gBoard[i][j]
             const className = `cell cell-${i}-${j}`
 
             strHTML += `<td class="${className}">${cell}</td>`
@@ -16,8 +16,8 @@ function renderBoard(mat, selector) {
         strHTML += '</tr>'
     }
     strHTML += '</tbody></table>'
-    
-    const elContainer = document.querySelector(selector)
+
+    const elContainer = document.querySelector('.board-container')
     elContainer.innerHTML = strHTML
 }
 

@@ -40,7 +40,7 @@ function movePacman(ev) {
 
     } else if (nextCell === SUPER_FOOD) {
         if (gPacman.isSuper) return
-        handlSuperFood()
+        handleSuperFood()
     } else if (nextCell === CHERRY) {
         updateScore(10)
     }
@@ -96,7 +96,7 @@ function handleFood() {
     updateScore(1)
     checkVictory()
 }
-function handlSuperFood(){
+function handleSuperFood(){
     gPacman.isSuper = true
     renderGhost()
     setTimeout(() => {

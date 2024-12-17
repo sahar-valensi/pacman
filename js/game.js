@@ -12,6 +12,7 @@ var gCherryInterval
 
 function init() {
     console.log('hello')
+    closeModal()
     gGame = {
         score: 0,
         isOn: false,
@@ -22,12 +23,10 @@ function init() {
     gBoard = buildBoard()
     createPacman(gBoard)
     createGhosts(gBoard)
-    renderBoard(gBoard, '.board-container')
+    renderBoard()
 
     gGame.isOn = true
     gCherryInterval = setInterval(addCherry, 15000)
-    closeModal()
-
 }
 
 function buildBoard() {
@@ -49,7 +48,7 @@ function buildBoard() {
             }
         }
     }
-    creatSuperFood(board)
+    createSuperFood(board)
     return board
 }
 
@@ -82,7 +81,7 @@ function addCherry() {
     //     gBoard[emptyCell.i][emptyCell.j] = EMPTY
     //   }, 2000);
 }
-function creatSuperFood(board) {
+function createSuperFood(board) {
     board[1][1] = SUPER_FOOD
     board[1][board[0].length - 2] = SUPER_FOOD
     board[board.length - 2][1] = SUPER_FOOD
