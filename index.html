@@ -15,10 +15,18 @@
     <h2 class="score">Score: <span>0</span> </h2>
 
     <div class="board-container"></div>
+    <div></div>
     
     <div class="modal">
         <h3 class="end-msg"></h3>
         <button class="restart-btn" onclick="init()">Play Again</button>
+    </div>
+
+    <div class="controllers">
+        <button class="up" onclick="movePacman({key: 'ArrowUp'})">⬆️</button>
+        <button class="left" onclick="movePacman({key: 'ArrowLeft'})">⬅️</button>
+        <button class="right" onclick="movePacman({key: 'ArrowRight'})">➡️</button>
+        <button class="down" onclick="movePacman({key: 'ArrowDown'})">⬇️</button>
     </div>
     
     <script src="js/utils.js"></script>
